@@ -1,0 +1,159 @@
+<!-- Calculator in JavaScript. -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Calculator built in JavaScript
+</title>
+
+<!-- Begins the JavaScript Code -->
+<script>
+
+// Use insert() function to insert the number in textview.
+function insert(num) 
+{
+document.form1.textview.value = document.form1.textview.value + num;
+}
+
+// Use equal() function to return the result based on passed values.
+function equal()
+{
+var exp = document.form1.textview.value;
+if(exp)
+{
+document.form1.textview.value = eval(exp)
+}
+}
+
+/* Here, we create a backspace() function to remove the number at the end of the numeric series in textview. */
+function backspace()
+{
+var exp = document.form1.textview.value;
+document.form1.textview.value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
+}
+
+
+</script>
+
+<!-- Start the coding for CSS -->
+<style>
+/* Create the Outer layout of the Calculator. */
+.formstyle
+{
+width: 322px;
+height: 440px;
+margin: 20px auto;
+box-shadow:0px 0px 11px rgb(110, 106, 106);
+border: 3px solid #504d4d;
+border-radius: 18px;
+padding: 20px;
+text-align: center;
+background-color:#574a4a;
+} 
+
+
+/* Display top horizontal bar that contain some information. */
+h1 {
+	text-align: center;
+	padding: 13px;
+    font-size: 29px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: #654f72;
+	color: white;
+	}
+input:hover
+{
+background-color: #978ece;
+}
+	
+*{
+margin: 0;
+padding: 0;
+}
+
+/* It is used to create the layout for calculator button. */
+.btn{
+width: 50px;
+height: 50px;
+font-size: 25px;
+margin: 6px;
+border:2px solid rgb(49, 47, 47);
+border-radius: 8px;
+cursor: pointer;
+background-color: darkslateblue;
+color: white;
+
+}
+
+#p1{
+    margin-top: 63px;
+}
+
+/* It is used to display the numbers, operations and results. */
+.textview{
+width: 273px;
+margin: 8px;
+justify-content: center;
+margin-top: 21px;
+margin-bottom:29px;
+font-size: 25px;
+padding: 7px;
+border:2px solid #6d6868;
+border-radius: 8px;
+background-color: rgb(209, 252, 209);
+}	
+.textview:hover{
+    background-color: #ededf3;
+}
+	
+</style>
+</head>
+<body>
+<h1> Calculator built in JavaScript </h1>
+<section id="p1">
+
+</section>
+ <div class= "formstyle">
+ <form name = "form1">
+ <input class= "textview" name = "textview">
+ </form>
+ <center>
+ <table >
+ <tr> 
+	<td> <input class = "btn" type = "button" value = "AC" onclick = "form1.textview.value = ' ' " > </td>
+	<td> <input  class = "btn" type = "button" value = "C" onclick = "backspace()" > </td>
+	<td> <input  class = "btn" type = "button" value = "/" onclick = "insert('/')" > </td>
+	<td> <input class = "btn" type = "button" value = "*" onclick = "insert('*')" > </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "button" value = "7" onclick = "insert(7)" > </td>
+	<td> <input class = "btn" type = "button" value = "8" onclick = "insert(8)" > </td>
+	<td> <input class = "btn" type = "button" value = "9" onclick = "insert(9)" > </td>
+	<td> <input class = "btn" type = "button" value = "-" onclick = "insert('-')" > </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "button" value = "4" onclick = "insert(4)" > </td>
+	<td> <input class = "btn" type = "button" value = "5" onclick = "insert(5)" > </td>
+	<td> <input class = "btn" type = "button" value = "6" onclick = "insert(6)" > </td>
+	<td> <input class = "btn" type = "button" value = "+" onclick = "insert('+')" > </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "button" value = "1" onclick = "insert(1)" > </td>
+	<td> <input class = "btn" type = "button" value = "2" onclick = "insert(2)" > </td>
+	<td> <input class = "btn" type = "button" value = "3" onclick = "insert(3)" > </td>
+	<td rowspan = 5> <input class = "btn" style = "height: 110px" type = "button" value = "=" onclick = "equal()"> </td>
+	</tr>
+	<tr>
+	<td colspan = 2> <input class = "btn" style = "width: 106px" type = "button" value = "0" onclick = "insert(0)" > </td>
+	<td> <input class = "btn" type = "button" value = "." onclick = "insert('.')"> </td>
+	</tr>
+	</table>
+	</center>
+ </div>
+ </body>
+ </html>
+
+ 
